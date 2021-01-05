@@ -1,0 +1,8 @@
+<p>{{ Genre.genre }}</p>
+{% if MovieList %}
+    {% for movie in MovieList %}
+        <p>{{ movie.movie_title }}</p>
+    {% endfor %}
+{% else %}
+    <p>Oops! No movie in this genre yet</p>
+{% endif %}

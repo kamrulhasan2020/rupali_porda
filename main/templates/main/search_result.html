@@ -1,0 +1,18 @@
+{% if MovieList %}
+    <p>Movies:</p>
+    {% for movie in MovieList %}
+        <p>{{movie.movie_title}}</P>
+    {% endfor %}
+{% else %}
+    <p>No movie found</p>
+{% endif %}
+
+
+{% if PersonList %}
+    <p>Persons:</p>
+    {% for person in PersonList %}
+        <p>{{person.full_name}}</P>
+    {% endfor %}
+{% else %}
+    <p>No Person Found</p> 
+{% endif %}

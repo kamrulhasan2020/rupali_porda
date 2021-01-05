@@ -1,0 +1,12 @@
+<h2>Search</h2>
+  <form action = "{% url 'main:search' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Search</button>
+  </form>
+
+{% if MovieList %}
+    {% for movie in MovieList %}
+        <p>{{movie.movie_title}}</p>
+    {% endfor %}
+{% endif %}

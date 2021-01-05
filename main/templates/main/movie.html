@@ -1,0 +1,6 @@
+<p>{{Movie.movie_title}}</p>
+<p>{{Movie.average_rating}}</P>
+
+{% for director in Director %}
+    <p>{{director.person.full_name}}<p>
+{% endfor %}          

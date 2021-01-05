@@ -1,0 +1,7 @@
+{% if ReviewList %}
+    {% for review in ReviewList %}
+        <p>{{ review.review }}</p>
+    {% endfor %}
+{% else %}
+    <p>There is no review yet</p>
+{% endif %}
