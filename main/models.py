@@ -17,7 +17,7 @@ class Genre(models.Model):
 
 
 class Person(models.Model):
-    full_name = models.CharField(max_length=800)
+    full_name = models.CharField(max_length=250)
     intro = models.TextField()
     image = models.ImageField(default='default person.jpg', upload_to='peoples')
     date_of_birth = models.DateField(null=True, blank=True)
@@ -66,7 +66,7 @@ class Movie(models.Model):
 class Cast(models.Model):
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     person = models.ForeignKey(Person, on_delete=models.CASCADE)
-    character = models.CharField(max_length=800, blank=True, null=True)
+    character = models.CharField(max_length=250, blank=True, null=True)
     star = models.BooleanField(default=False)
     added_by = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
 
@@ -93,8 +93,8 @@ class Producer(models.Model):
 
 class Crew(models.Model):
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
-    name = models.CharField(max_length=700)
-    role = models.CharField(max_length=900)
+    name = models.CharField(max_length=250)
+    role = models.CharField(max_length=250)
 
     def __str__(self):
         return self.name
